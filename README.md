@@ -32,4 +32,4 @@ wget https://github.com/Bangjago2/xeniom/raw/refs/heads/main/menu/update.sh && c
 
 
 
-# SUPORT ALL OS UBUNTU & DEBIAN 
+

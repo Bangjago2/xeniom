@@ -355,7 +355,6 @@ Expired On       :  $exp
 ◇━━━━━━━━━━━━━━━━━◇
  "
  
- else
 TEXT="
 <code>◇━━━━━━━━━━━━━━◇</code>
 <b>   TRANSAKSI SUCCES </b>

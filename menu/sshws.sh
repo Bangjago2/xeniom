@@ -353,19 +353,19 @@ Save Link Account: http://$domen:89/ssh-$Login.txt
 Aktif Selama      : $masaaktif Hari
 Expired On       :  $exp
 ◇━━━━━━━━━━━━━━━━━◇
- ```
-<code>◇━━━━━━━━━━━━━━◇</code>
-<b>   TRANSAKSI SUCCES </b>
-<code>◇━━━━━━━━━━━━━━◇</code>
-<b>PRODUK  :  SSH </b>
-<b>REGION    :</b> <code>$CITY </code>
-<b>REQ NAMA   :</b> <code>$Login </code>
-<b>REQ CONFG  :
-<b>DEVICE :</b> <code>${iplim} IP </code>
-<b>AKTIF:</b>
-<b>EXP :</b> <code>$exp </code>
-<code>◇━━━━━━━━━━━━━━◇</code>
-<i>TERIMAKASIH TELAH ORDER </i>```
+
+```◇━━━━━━━━━━━━━━◇
+ TRANSAKSI SUCCES 
+◇━━━━━━━━━━━━━━◇
+PRODUK  :  SSH 
+REGION    :<code>$CITY </code>
+REQ NAMA   :<code>$Login </code>
+REQ CONFG  :
+DEVICE :${iplim} IP </code>
+AKTIF:
+EXP :<code>$exp </code>
+◇━━━━━━━━━━━━━━◇
+TERIMAKASIH TELAH ORDER```
 "
 fi
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null

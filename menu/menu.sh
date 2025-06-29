@@ -369,7 +369,7 @@ echo -e "${RED}│PILIH NOMOR${NC} ${YELLOW}[12] ${GREEN}🔍 MELIHAT USER ONLIN
 echo -e "${CYAN}╰══${GREEN}==================${YELLOW}══=======${ORANGE}══════════════════════${RED}╯${NC}"
 echo -e "$COLOR1│                                                   $COLOR1│ $NC"
 echo -e "$COLOR1╰═══════════════════════════════════════════════════╯${NC}"
-echo -e "$COLOR1│                                                   $COLOR1│ $NC"
+echo -e "$COLOR1│${NC} ${COLBG1}         ${WH}• WONG NDEZO OFFICIAL STORE•        ${NC} $COLOR1│ $NC"
 echo -e "$COLOR1╰═══════════════════════════════════════════════════╯${NC}"
 echo -e "$COLOR1╭═══════════════════════════════════════════════════╮${NC}"
 echo -e "$COLOR1│ ${WH}Traffic${NC}      ${WH}Today     Yesterday       Month       ${NC}"
@@ -378,7 +378,7 @@ echo -e "$COLOR1╰════════════════════�
 
 echo -e "$COLOR1╭═══════════════════════════════════════════════════╮${NC}"
 echo -e "$COLOR1│ $NC ${WH}Versi Script  ${COLOR1}: ${WH}$(cat /opt/.ver) Latest Version${NC}$COLOR1"
-echo -e "$COLOR1│ $NC ${WH}Developer     ${COLOR1}: ${WH} WONG NDEZO STORE${NC}$COLOR1"
+echo -e "$COLOR1│ $NC ${WH}Developer     ${COLOR1}: ${WH}WONG NDEZO STORE${NC}$COLOR1"
 echo -e "$COLOR1│ $NC ${WH}Client        ${COLOR1}: ${WH}$client_name${NC}"
 echo -e "$COLOR1│ $NC ${WH}Sisa Hari     ${COLOR1}: ${WH}$days_remaining hari${NC}"
 echo -e "$COLOR1│ $NC ${WH}Expire Date   ${COLOR1}: ${WH}$exp_date${NC}"
@@ -397,6 +397,7 @@ case $opt in
 09 | 9) clear ; m-update ;;
 10 | 10) clear ; system ;;
 11 | 11) clear ; menu-backup;;
+12 | 12) clear ; online;;
 00 | 0) clear ; menu ;;
 *) clear ; menu ;;
 esac

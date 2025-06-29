@@ -346,27 +346,17 @@ Payload ENHACED   :
 Payload WS/WSS   :
 <code>GET /cdn-cgi/trace HTTP/1.1[crlf]Host: bug.com[crlf][crlf]GET-RAY / HTTP/1.1[crlf]Host: [host][crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]</code>
 ◇━━━━━━━━━━━━━━━━━◇
-OpenVPN     :  http://$domen:81/ssl.ovpn
+OpenVPN     :  http://$domen:89/ssl.ovpn
 ◇━━━━━━━━━━━━━━━━━◇
-Save Link Account: http://$domen:81/ssh-$Login.txt
+Save Link Account: http://$domen:89/ssh-$Login.txt
 ◇━━━━━━━━━━━━━━━━━◇
 Aktif Selama      : $masaaktif Hari
-Dibuat Pada      : $tnggl
 Expired On       :  $exp
 ◇━━━━━━━━━━━━━━━━━◇
  "
  
- curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
-cd
-if [ ! -e /etc/tele ]; then
-echo -ne
-else
-echo "$TEXT" > /etc/notiftele
-bash /etc/tele
-fi
-user2=$(echo "$User" | cut -c 1-3)
-TIME2=$(date +'%Y-%m-%d %H:%M:%S')
-TEXT2="
+ else
+TEXT="
 <code>◇━━━━━━━━━━━━━━◇</code>
 <b>   TRANSAKSI SUCCES </b>
 <code>◇━━━━━━━━━━━━━━◇</code>

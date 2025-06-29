@@ -353,8 +353,7 @@ Save Link Account: http://$domen:89/ssh-$Login.txt
 Aktif Selama      : $masaaktif Hari
 Expired On       :  $exp
 ◇━━━━━━━━━━━━━━━━━◇
-
-```◇━━━━━━━━━━━━━━◇
+◇━━━━━━━━━━━━━━◇
  TRANSAKSI SUCCES 
 ◇━━━━━━━━━━━━━━◇
 PRODUK  :  SSH 
@@ -365,7 +364,7 @@ DEVICE :${iplim} IP </code>
 AKTIF:
 EXP :<code>$exp </code>
 ◇━━━━━━━━━━━━━━◇
-TERIMAKASIH TELAH ORDER```
+TERIMAKASIH TELAH ORDER
 "
 fi
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null

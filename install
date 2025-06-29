@@ -382,22 +382,15 @@ res10() {
 }
 
 res11() {
-    echo -e "${GREEN}    Mengkonfigurasi Dropbear...${NC}"
-    sudo sed -i '/^DROPBEAR_PORT=/d' /etc/default/dropbear
-    sudo sed -i '/^DROPBEAR_EXTRA_ARGS=/d' /etc/default/dropbear
-    echo 'DROPBEAR_PORT=149' | sudo tee -a /etc/default/dropbear
-    echo 'DROPBEAR_EXTRA_ARGS="-p 50000 -p 109 -p 110 -p 69 -b /etc/issue.net"' | sudo tee -a /etc/default/dropbear
-
-    sudo mkdir -p /etc/dropbear/
-    sudo dropbearkey -t dss -f /etc/dropbear/dropbear_dss_host_key
-    sudo dropbearkey -t rsa -f /etc/dropbear/dropbear_rsa_host_key
-    sudo chmod 600 /etc/dropbear/dropbear_dss_host_key
-    sudo chmod 600 /etc/dropbear/dropbear_rsa_host_key
-    sudo chown root:root /etc/dropbear/dropbear_dss_host_key
-    sudo chown root:root /etc/dropbear/dropbear_rsa_host_key
-    sudo systemctl daemon-reload
-    sudo systemctl restart dropbear
-     sudo systemctl enable nginx
+    sudo sed -i 's/^[[:space:]]*#*DROPBEAR_EXTRA_ARGS=.*/DROPBEAR_EXTRA_ARGS="-p 50000 -p 109"/' /etc/default/dropbear
+sudo sed -i 's/^#DROPBEAR_PORT=.*/DROPBEAR_PORT=149/' /etc/default/dropbear
+sudo mkdir -p /etc/dropbear/
+sudo dropbearkey -t dss -f /etc/dropbear/dropbear_dss_host_key
+sudo dropbearkey -t rsa -f /etc/dropbear/dropbear_rsa_host_key
+sudo chmod 600 /etc/dropbear/dropbear_dss_host_key
+sudo chmod 600 /etc/dropbear/dropbear_rsa_host_key
+sudo chown root:root /etc/dropbear/dropbear_dss_host_key
+sudo chown root:root /etc/dropbear/dropbear_rsa_host_key
     clear
 }
 
@@ -544,9 +537,9 @@ TIME=$(date '+%H:%M:%S')
 DOMAIN=$(cat /etc/xray/domain)
 
 MESSAGE="\`\`\`
-❏━━━━━━━━━━━━━━━━━❏
-     WONG NDEZO OFFICIAL 
-❏━━━━━━━━━━━━━━━━━❏
+❏━━━━━━━━━━━━━━━━━━━━━━━━━❏
+ WONG NDEZO OFFICIAL 
+❏━━━━━━━━━━━━━━━━━━━━━━━━━❏
 ❖ Status        : Active
 ❖ Status SC     : Admin Access
 ❖ Linux OS      : $OS
@@ -556,9 +549,9 @@ MESSAGE="\`\`\`
 ❖ Waktu         : $TIME
 ❖ Tanggal       : $DATE
 ❖ Domain        : $DOMAIN
-❏━━━━━━━━━━━━━━━━━❏
-    Dev https://t.me/Gxkuwi 
-❏━━━━━━━━━━━━━━━━━❏
+❏━━━━━━━━━━━━━━━━━━━━━━━━━❏
+ Dev https://t.me/Gxkuwi 
+❏━━━━━━━━━━━━━━━━━━━━━━━━━❏
 \`\`\`"
 
 send_telegram_message "$MESSAGE"

@@ -354,7 +354,7 @@ Aktif Selama      : $masaaktif Hari
 Expired On       :  $exp
 ◇━━━━━━━━━━━━━━━━━◇
 "
-fi
+
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 cd
 if [ ! -e /etc/tele ]; then
@@ -363,6 +363,7 @@ else
 echo "$TEXT" > /etc/notiftele
 bash /etc/tele
 
+else
 TEXT="<code>◇━━━━━━━━━━━━━━━━━◇
 *_PEMBELIAN BERHASIL_*
 ◇━━━━━━━━━━━━━━━━━◇
@@ -378,7 +379,7 @@ TEXT="<code>◇━━━━━━━━━━━━━━━━━◇
 TERIMAKASIH TELAH ORDER 
 ◇━━━━━━━━━━━━━━━━━◇
 "
-
+fi
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 cd
 if [ ! -e /etc/tele ]; then
@@ -436,6 +437,7 @@ echo "" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
 }
+
 function trial(){
 clear
 domen=`cat /etc/xray/domain`

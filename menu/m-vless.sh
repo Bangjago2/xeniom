@@ -1269,7 +1269,7 @@ case $opt in
 2) clear ; trial-vless  ;;
 3) clear ; renew-vless  ;;
 4) clear ; del-vless  ;;
-5) clear ; cek-vme.sh  ;;
+5) clear ; cek-vless  ;;
 6) clear ; list-vless  ;;
 7) clear ; limit-vless  ;;
 8) clear ; login-vless  ;;

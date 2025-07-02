@@ -363,7 +363,6 @@ else
 echo "$TEXT" > /etc/notiftele
 bash /etc/tele
 
-else
 TEXT="<code>◇━━━━━━━━━━━━━━━━━◇
 *_PEMBELIAN BERHASIL_*
 ◇━━━━━━━━━━━━━━━━━◇

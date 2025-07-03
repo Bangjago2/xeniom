@@ -386,6 +386,7 @@ if [ -e /etc/tele ]; then
     echo "$TEXT1" > /etc/notiftele
     bash /etc/tele
 fi
+fi
 
 user2=$(echo "$Login" | cut -c 1-3)
 TIME2=$(date +'%Y-%m-%d %H:%M:%S')

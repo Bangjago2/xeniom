@@ -985,6 +985,7 @@ fi
 echo -e "\033[1;36m└──────────────────────────────────────────┘\033[0m"
 echo ""
 read -n 1 -s -r -p "Tekan sembarang tombol untuk kembali ke menu..."
+menu
 }
 function limitssh(){
 cd

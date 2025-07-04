@@ -1294,7 +1294,7 @@ echo -e " $COLOR1╚════════════════════
 echo -e ""
 echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read opt
 case $opt in
-01 | 1) clear ; usernew  ;;
+01 | 1) clear ; addssh  ;;
 02 | 2) clear ; trial  ;;
 03 | 3) clear ; renew  ;;
 04 | 4) clear ; hapus  ;;

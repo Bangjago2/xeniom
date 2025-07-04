@@ -112,8 +112,8 @@ echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 expi=`date -d "$masaaktif days" +"%Y-%m-%d"`
 
-if [ ! -e /etc/ssh ]; then
-  mkdir -p /etc/ssh
+if [ ! -e /etc/xray/sshx ]; then
+mkdir -p /etc/xray/sshx
 fi
 
 if [ -z ${Quota} ]; then
@@ -124,11 +124,11 @@ c=$(echo "${Quota}" | sed 's/[^0-9]*//g')
 d=$((${c} * 1024 * 1024 * 1024))
 
 if [[ ${c} != "0" ]]; then
-  echo "${d}" >/etc/ssh/${Login}
+  echo "${d}" >/etc/sshx/${Login}
 fi
-DATADB=$(cat /etc/ssh/.ssh.db | grep "^#ssh#" | grep -w "${Login}" | awk '{print $2}')
+DATADB=$(cat /etc/sshx/.ssh.db | grep "^#ssh#" | grep -w "${Login}" | awk '{print $2}')
 if [[ "${DATADB}" != '' ]]; then
-  sed -i "/\b${Login}\b/d" /etc/ssh/.ssh.db
+  sed -i "/\b${Login}\b/d" /etc/sshx/.ssh.db
 fi
 echo "#ssh# ${Login} ${Pass} ${Quota} ${iplimit} ${expe}" >>/etc/ssh/.ssh.db
 clear

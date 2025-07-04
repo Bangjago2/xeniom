@@ -117,8 +117,8 @@ wget -q -O /usr/bin/check-port "https://raw.githubusercontent.com/Bangjago2/xeni
 wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/Bangjago2/xeniom/refs/heads/main/menu/menu-backup.sh" && chmod +x /usr/bin/menu-backup
 wget -q -O /usr/bin/auto-backup "https://raw.githubusercontent.com/Bangjago2/xeniom/refs/heads/main/menu/auto-backup.sh" && chmod +x /usr/bin/auto-backup
 wget -q -O /usr/bin/auto-restore "https://raw.githubusercontent.com/Bangjago2/xeniom/refs/heads/main/menu/auto-restore.sh" && chmod +x /usr/bin/auto-restore
-wget -q -O /usr/bin/auto-backup "https://raw.githubusercontent.com/Bangjago2/xeniom/refs/heads/main/menu/backup" && chmod +x /usr/bin/backup
-wget -q -O /usr/bin/auto-restore "https://raw.githubusercontent.com/Bangjago2/xeniom/refs/heads/main/menu/restore" && chmod +x /usr/bin/restore
+wget -q -O /usr/bin/backup "https://raw.githubusercontent.com/Bangjago2/xeniom/refs/heads/main/menu/backup" && chmod +x /usr/bin/backup
+wget -q -O /usr/bin/restore "https://raw.githubusercontent.com/Bangjago2/xeniom/refs/heads/main/menu/restore" && chmod +x /usr/bin/restore
 wget -q -O /usr/bin/manual-backup "https://raw.githubusercontent.com/Bangjago2/xeniom/refs/heads/main/menu/manual-backup.sh" && chmod +x /usr/bin/manual-backup
 wget -q -O /usr/bin/manual-restore "https://raw.githubusercontent.com/Bangjago2/xeniom/refs/heads/main/menu/manual-restore.sh" && chmod +x /usr/bin/manual-restore
 

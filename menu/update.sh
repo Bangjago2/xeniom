@@ -129,6 +129,8 @@ wget -q -O /usr/bin/trialtrojan "https://raw.githubusercontent.com/Bangjago2/xen
 wget -q -O /usr/bin/trialssh "https://raw.githubusercontent.com/Bangjago2/xeniom/refs/heads/main/menu/trialssh.sh" && chmod +x /usr/bin/trialssh
 wget -q -O /usr/bin/trial "https://raw.githubusercontent.com/Bangjago2/xeniom/refs/heads/main/menu/trial.sh" && chmod +x /usr/bin/trial
 wget -q -O /usr/bin/addssh "https://raw.githubusercontent.com/Bangjago2/xeniom/refs/heads/main/menu/addssh" && chmod +x /usr/bin/addssh
+wget -q -O /usr/bin/cekssh "https://raw.githubusercontent.com/Bangjago2/xeniom/refs/heads/main/menu/cekssh" && chmod +x /usr/bin/cekssh
+
 
 clear
 echo -e ""

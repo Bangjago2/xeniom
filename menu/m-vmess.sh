@@ -1238,7 +1238,6 @@ function cek-vmess() {
     m-vmess
 }
 function list-vmess(){
-function list-vmess(){
 clear
 NUMBER_OF_CLIENTS=$(grep -c -E "^#vmg " "/etc/xray/config.json")
 if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then

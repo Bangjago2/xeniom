@@ -369,7 +369,7 @@ TEXT2="<code>◇━━━━━━━━━━━━━━━━━◇
 -» AKTIF : $masaaktif HARI
 -» TGL EXP : $expi
 ◇━━━━━━━━━━━━━━━━━◇
-$author </code>" # Assuming 'author' is meant for 'nama'
+$TERIMAKASIH TERIMAKASIH TELAH ORDER </code>" # Assuming 'author' is meant for 'nama'
 
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT2&parse_mode=html" $URL >/dev/null # Sending the new notification

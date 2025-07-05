@@ -39,8 +39,6 @@ rm -rf trialssh
 rm -rf trialtrojan
 rm -rf trialvless
 rm -rf trialvmess
-rm -rf addssh
-rm -rf cekssh
 rm -rf update
 
 rm -rf cleaner
@@ -125,8 +123,6 @@ wget -q -O /usr/bin/trialvless "https://raw.githubusercontent.com/Bangjago2/xeni
 wget -q -O /usr/bin/trialtrojan "https://raw.githubusercontent.com/Bangjago2/xeniom/refs/heads/main/menu/trialvless.sh" && chmod +x /usr/bin/trialvless
 wget -q -O /usr/bin/trialssh "https://raw.githubusercontent.com/Bangjago2/xeniom/refs/heads/main/menu/trialssh.sh" && chmod +x /usr/bin/trialssh
 wget -q -O /usr/bin/trial "https://raw.githubusercontent.com/Bangjago2/xeniom/refs/heads/main/menu/trial.sh" && chmod +x /usr/bin/trial
-wget -q -O /usr/bin/addssh "https://raw.githubusercontent.com/Bangjago2/xeniom/refs/heads/main/menu/addssh" && chmod +x /usr/bin/addssh
-wget -q -O /usr/bin/cekssh "https://raw.githubusercontent.com/Bangjago2/xeniom/refs/heads/main/menu/cekssh" && chmod +x /usr/bin/cekssh
 
 
 chmod +x m-tcp
@@ -152,8 +148,6 @@ chmod +x trialssh
 chmod +x trialtrojan
 chmod +x trialvless
 chmod +x trialvmess
-chmod +x addssh
-chmod +x cekssh
 chmod +x update
 
 chmod +x cleaner

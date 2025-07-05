@@ -881,9 +881,8 @@ done
 Login=$(grep -E "^### " "/etc/xray/ssh" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 cat /etc/xray/sshx/akun/log-create-${Login}.log
 cat /etc/xray/sshx/akun/log-create-${Login}.log > /etc/notifakun
-sed -i 's/\x1B\[1;37m//g' /etc/notifakun
-sed -i 's/\x1B\[0;96m//g' /etc/notifakun
-sed -i 's/\x1B\[0m//g' /etc/notifakun
+# This line removes all ANSI color codes
+sed -i 's/\x1B\[[0-9;]*m//g' /etc/notifakun
 TEXT=$(cat /etc/notifakun)
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 cd

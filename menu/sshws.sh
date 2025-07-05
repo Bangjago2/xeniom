@@ -1025,28 +1025,71 @@ if [ -f "/etc/openvpn/server/openvpn-tcp.log" ]; then
     display_vpn_header
     # Extract CLIENT_LIST information directly
     # Use 'grep -w' for whole word match, 'cut' to select fields, 'sed' for formatting
-    cat /etc/openvpn/server/openvpn-tcp.log | grep -w "^CLIENT_LIST" | cut -d ',' -f 2,3,8 | sed 's/,/      /g'
-    echo -e "\033[1;36m└──────────────────────────────────────────┘\033[0m"
-else
-    echo -e "\n\033[0;33mOpenVPN TCP log file not found: /etc/openvpn/server/openvpn-tcp.log\033[0m"
-fi
+function cek(){
 
-# --- Monitor OpenVPN UDP Sessions ---
-if [ -f "/etc/openvpn/server/openvpn-udp.log" ]; then
-    echo -e "\n\033[1;33m--- Active OpenVPN UDP Sessions ---\033[0m"
-    display_vpn_header
-    # Extract CLIENT_LIST information directly
-    cat /etc/openvpn/server/openvpn-udp.log | grep -w "^CLIENT_LIST" | cut -d ',' -f 2,3,8 | sed 's/,/      /g'
-    echo -e "\033[1;36m└──────────────────────────────────────────┘\033[0m"
-else
-    echo -e "\n\033[0;33mOpenVPN UDP log file not found: /etc/openvpn/server/openvpn-udp.log\033[0m"
+if [ -e "/var/log/auth.log" ]; then
+        LOG="/var/log/auth.log";
 fi
+if [ -e "/var/log/secure" ]; then
+        LOG="/var/log/secure";
+fi
+                
+data=( `ps aux | grep -i dropbear | awk '{print $2}'`);
+echo -e "\033[1;36m┌──────────────────────────────────────────┐\033[0m"
+echo "    ID  |  Username  |  IP Address";
+echo -e "\033[1;36m└──────────────────────────────────────────┘\033[0m"
+cat $LOG | grep -i dropbear | grep -i "Password auth succeeded" > /tmp/login-db.txt;
+for PID in "${data[@]}"
+do
+            cat /tmp/login-db.txt | grep "dropbear\[$PID\]" > /tmp/login-db-pid.txt;
+            NUM=`cat /tmp/login-db-pid.txt | wc -l`;
+            USER=`cat /tmp/login-db-pid.txt | awk '{print $10}'`;
+            IP=`cat /tmp/login-db-pid.txt | awk '{print $12}'`;
+            if [ $NUM -eq 1 ]; then
+                    echo "$PID - $USER - $IP";
+                    fi
+done
+echo -e "\033[1;36m└──────────────────────────────────────────┘\033[0m"
+echo " "
+echo -e "\033[1;36m┌──────────────────────────────────────────┐\033[0m"
+echo "    ID  |  Username  |  IP Address";
+echo -e "\033[1;36m└──────────────────────────────────────────┘\033[0m"
+cat $LOG | grep -i sshd | grep -i "Accepted password for" > /tmp/login-db.txt
+data=( `ps aux | grep "\[priv\]" | sort -k 72 | awk '{print $2}'`);
 
+for PID in "${data[@]}"
+do
+            cat /tmp/login-db.txt | grep "sshd\[$PID\]" > /tmp/login-db-pid.txt;
+            NUM=`cat /tmp/login-db-pid.txt | wc -l`;
+            USER=`cat /tmp/login-db-pid.txt | awk '{print $9}'`;
+            IP=`cat /tmp/login-db-pid.txt | awk '{print $11}'`;
+            if [ $NUM -eq 1 ]; then
+                    echo "$PID - $USER - $IP";
+        fi
+done
+echo -e "\033[1;36m└──────────────────────────────────────────┘\033[0m"
+if [ -f "/etc/openvpn/server/openvpn-tcp.log" ]; then
 echo ""
-read -n 1 -s -r -p "Tekan tombol apa saja untuk kembali ke menu..."
-# Assuming 'sshws' is a function defined elsewhere that takes you back to the main menu.
-# If it's a command, ensure it's in your PATH or specify the full path.
-sshws
+echo -e "\033[1;36m┌──────────────────────────────────────────┐\033[0m"
+echo "    Username  |  IP Address  |  Connected";
+echo -e "\033[1;36m└──────────────────────────────────────────┘\033[0m"
+            cat /etc/openvpn/server/openvpn-tcp.log | grep -w "^CLIENT_LIST" | cut -d ',' -f 2,3,8 | sed -e 's/,/      /g' > /tmp/vpn-login-tcp.txt
+            cat /tmp/vpn-login-tcp.txt
+fi
+echo -e "\033[1;36m└──────────────────────────────────────────┘\033[0m"
+
+if [ -f "/etc/openvpn/server/openvpn-udp.log" ]; then
+echo " "
+echo -e "\033[1;36m┌──────────────────────────────────────────┐\033[0m"
+echo "    Username  |  IP Address  |  Connected";
+echo -e "\033[1;36m└──────────────────────────────────────────┘\033[0m"
+            cat /etc/openvpn/server/openvpn-udp.log | grep -w "^CLIENT_LIST" | cut -d ',' -f 2,3,8 | sed -e 's/,/      /g' > /tmp/vpn-login-udp.txt
+            cat /tmp/vpn-login-udp.txt
+fi
+echo -e "\033[1;36m└──────────────────────────────────────────┘\033[0m"
+echo ""
+read -n 1 -s -r -p "Tekan tombol apa saja untuk kembali ke menu
+menu
 }
 function limitssh(){
 cd

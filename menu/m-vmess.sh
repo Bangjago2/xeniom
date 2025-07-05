@@ -459,13 +459,13 @@ NEW_TEXT="<code>◇━━━━━━━━━━━━━━━━━◇
 -» AKTIF : $masaaktif HARI
 -» TGL EXP : $exp
 ◇━━━━━━━━━━━━━━━━━◇
-$TERIMAKASIH TELAH ORDER </code>"
+$TERIMAKASIH TERIMAKASIH TELAH ORDER </code>"
 
 # Send the new notification
-curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$NEW_TEXT&parse_mode=html" $URL >/dev/null
+curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 
 # Send the existing account details notification
-curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
+curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$NEW_TEXT&parse_mode=html" $URL >/dev/null
 cd
 if [ ! -e /etc/tele ]; then
 echo -ne

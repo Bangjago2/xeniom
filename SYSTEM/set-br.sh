@@ -9,8 +9,8 @@ make install
 cd
 rm -rf wondershaper
 cd /usr/bin
-wget -O backup "https://raw.githubusercontent.com/Bangjago2/xeniom/refs/heads/main/menu/backup.sh"
-wget -O restore "https://raw.githubusercontent.com/Bangjago2/xeniom/refs/heads/main/menu/restore.sh"
+wget -O backup "https://raw.githubusercontent.com/Bangjago2/xeniom/refs/heads/main/menu/backup"
+wget -O restore "https://raw.githubusercontent.com/Bangjago2/xeniom/refs/heads/main/menu/restore"
 wget -O cleaner "https://raw.githubusercontent.com/Bangjago2/xeniom/refs/heads/main/SYSTEM/cleaner.sh"
 wget -O xp "https://raw.githubusercontent.com/Bangjago2/xeniom/refs/heads/main/SYSTEM/xp.sh"
 chmod +x /usr/bin/backup
